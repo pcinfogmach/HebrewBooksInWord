@@ -5,11 +5,13 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrowserTest", "BrowserTest\BrowserTest.csproj", "{BFA1EF41-3F82-420D-8535-448CFFDF5437}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HebrewBooksDownloader", "HebrewBooksDownloader\HebrewBooksDownloader.csproj", "{7CBCA413-7897-430D-A75D-283F5BC48BF6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HebrewBooksInWord", "HebrewBooksInWord\HebrewBooksInWord.csproj", "{23AAF065-961D-4C46-B81F-ED05969651A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HebrewBooks", "HebrewBooks\HebrewBooks.csproj", "{C692A63A-2BC4-4C21-A9A7-66E5EE13F25B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfiumViewer.Demo", "..\..\..\Downloads\PdfiumViewer-master\src\PdfiumViewer.Demo\PdfiumViewer.Demo.csproj", "{0C3D8422-F92F-4ECC-9C8F-8008B01A7448}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfiumViewer", "..\..\..\Downloads\PdfiumViewer-master\src\PdfiumViewer\PdfiumViewer.csproj", "{C2E62111-3D56-4861-931F-E3D66767903A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +23,6 @@ Global
 		{BFA1EF41-3F82-420D-8535-448CFFDF5437}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFA1EF41-3F82-420D-8535-448CFFDF5437}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFA1EF41-3F82-420D-8535-448CFFDF5437}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7CBCA413-7897-430D-A75D-283F5BC48BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CBCA413-7897-430D-A75D-283F5BC48BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CBCA413-7897-430D-A75D-283F5BC48BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CBCA413-7897-430D-A75D-283F5BC48BF6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{23AAF065-961D-4C46-B81F-ED05969651A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23AAF065-961D-4C46-B81F-ED05969651A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23AAF065-961D-4C46-B81F-ED05969651A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +31,14 @@ Global
 		{C692A63A-2BC4-4C21-A9A7-66E5EE13F25B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C692A63A-2BC4-4C21-A9A7-66E5EE13F25B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C692A63A-2BC4-4C21-A9A7-66E5EE13F25B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C3D8422-F92F-4ECC-9C8F-8008B01A7448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C3D8422-F92F-4ECC-9C8F-8008B01A7448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C3D8422-F92F-4ECC-9C8F-8008B01A7448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C3D8422-F92F-4ECC-9C8F-8008B01A7448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E62111-3D56-4861-931F-E3D66767903A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E62111-3D56-4861-931F-E3D66767903A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E62111-3D56-4861-931F-E3D66767903A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E62111-3D56-4861-931F-E3D66767903A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

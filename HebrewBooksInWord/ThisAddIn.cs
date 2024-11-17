@@ -6,6 +6,11 @@ using System.Xml.Linq;
 using Word = Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Word;
+using HebrewBooksInWord.UI;
+using System.Windows.Forms.Integration;
+using Microsoft.Office.Tools;
+using Microsoft.Office.Interop.Word;
+using System.Windows.Forms;
 
 namespace HebrewBooksInWord
 {
