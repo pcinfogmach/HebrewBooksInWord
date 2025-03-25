@@ -19,6 +19,7 @@ namespace HebrewBooks.Models
         {
             get => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "FullIndex.txt");
         }
+
         static void LoadBookEntriesList()
         {
             

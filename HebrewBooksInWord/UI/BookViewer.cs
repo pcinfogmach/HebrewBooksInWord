@@ -12,13 +12,13 @@ namespace HebrewBooks.Models
     {
         Microsoft.Office.Interop.Word.Document ParentDoc;
         bool isLoaded = false;
-        public BookViewer(string id) 
+        public BookViewer(string id)
         {
             SetCore();
-            CoreWebView2InitializationCompleted += (s, e) => 
+            CoreWebView2InitializationCompleted += (s, e) =>
             {
                 var com = this.CoreWebView2.GetComICoreWebView2();
-                LoadBook(id); 
+                LoadBook(id);
             };
 
             var doc = Globals.ThisAddIn.Application.ActiveDocument;
@@ -53,38 +53,35 @@ namespace HebrewBooks.Models
 
         async void LoadBook(string id)
         {
-            try
-            {
-                Source = new Uri(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "LoadingAnimation.html"));
-                string url = $"https://download.hebrewbooks.org/downloadhandler.ashx?req={id}";
-                string fileName = $"{id}.pdf"; // You can change the extension if it's not a PDF
-                string downloadPath = Path.Combine(Path.GetTempPath(), fileName);
+            //try
+            //{
+            Source = new Uri(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "LoadingAnimation.html"));
+            string url = $"https://download.hebrewbooks.org/downloadhandler.ashx?req={id}";
+            string fileName = $"{id}.pdf"; // You can change the extension if it's not a PDF
+            string downloadPath = Path.Combine(Path.GetTempPath(), fileName);
 
-                if (!File.Exists(downloadPath))
+            if (!File.Exists(downloadPath))
+            {
+                var handler = new HttpClientHandler { UseCookies = true };
+                using (HttpClient client = new HttpClient(handler))
                 {
-                    using (HttpClient client = new HttpClient())
-                    {
-                        try
-                        {
-                            byte[] fileBytes = await client.GetByteArrayAsync(url);
-                            File.WriteAllBytes(downloadPath, fileBytes);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error downloading the file: {ex.Message}");
-                        }
-                    }
-                }
+                    client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 ...");
+                    client.DefaultRequestHeaders.Add("Referer", "https://www.hebrewbooks.org/");
 
-                //CoreWebView2.NavigationCompleted += (sender, e) => { this.ExecuteScriptAsync("document.querySelectorAll('*').forEach(function(element) {element.setAttribute(\"dir\", \"auto\");});"); };
-                Source = new Uri(downloadPath);
-                
+                    byte[] fileBytes = await client.GetByteArrayAsync(url);
+                    File.WriteAllBytes(downloadPath, fileBytes);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-           
+
+            //CoreWebView2.NavigationCompleted += (sender, e) => { this.ExecuteScriptAsync("document.querySelectorAll('*').forEach(function(element) {element.setAttribute(\"dir\", \"auto\");});"); };
+            Source = new Uri(downloadPath);
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
         }
     }
 }

@@ -33,7 +33,7 @@ namespace HebrewBooks.Models
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show($"Error downloading the file: {ex.Message}");
+                            //MessageBox.Show($"Error downloading the file: {ex.Message}");
                         }
                     }
                 }
